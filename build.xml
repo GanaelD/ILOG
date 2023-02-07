@@ -6,5 +6,9 @@
 			srcdir="src"
 			includeantruntime="false" />
 	</target>
+	<target name="run" depends="compile">
+		<java	classname="fr.imtld.ilog.HelloJava"
+			classpath="bin"	/>
+	</target>
 
 </project>
