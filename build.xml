@@ -18,8 +18,11 @@
 			args="you"/>
 	</target>
 	<target name="tests" depends="compile-tests">
-		<java	classname="org.junit.runner.JUnitCore"
-			classpath="bin:lib/junit4.jar:lib/hamcrest.core.jar"
-			args="fr.imtld.ilog.MessageTest"/>
+		<exec executable="java"/>
+			<arg value="-cp"/>
+			<arg value="bin:lib/junit4.jar:lib/hamcrest.core.jar"/>
+			<arg value="org.junit.runner.JUnitCore"/>
+			<arg value="fr.imtld.ilog.MessageTest"/>
+		</exec>
 	</target>
 </project>
