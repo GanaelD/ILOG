@@ -6,10 +6,20 @@
 			srcdir="src"
 			includeantruntime="false" />
 	</target>
+	<target name="compile-tests">
+		<javac 	destdir="bin"
+			includes="**/*.java"
+			srcdir="src-tests"
+			includeantruntime="false" />
+	</target>
 	<target name="run" depends="compile">
 		<java	classname="fr.imtld.ilog.HelloJava"
 			classpath="bin"
 			args="you"/>
 	</target>
-
+	<target name="tests" depends="compile-tests">
+		<java	classname="org.junit.runner.JUnitCore"
+			classpath="bin:lib/junit4.jar:lib/hamcrest.core.jar"
+			args="fr.imtld.ilog.MessageTest"/>
+	</target>
 </project>
