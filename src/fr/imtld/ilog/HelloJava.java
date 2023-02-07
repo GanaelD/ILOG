@@ -8,7 +8,6 @@ public class HelloJava {
 	public static void main(String[] args) {
 		Message message = new Message();
 		message.display();
-		String msg = new Scanner(System.in).nextLine();
-		message.display(msg);
+		message.display(args[0]);
 	}
 }

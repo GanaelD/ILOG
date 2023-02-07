@@ -2,13 +2,14 @@
 
 	<target name="compile">
 		<javac	destdir="bin"
-			includes="fr/imtld/ilog/HelloJava.java"
+			includes="**/*.java"
 			srcdir="src"
 			includeantruntime="false" />
 	</target>
 	<target name="run" depends="compile">
 		<java	classname="fr.imtld.ilog.HelloJava"
-			classpath="bin"	/>
+			classpath="bin"
+			args="you"/>
 	</target>
 
 </project>
