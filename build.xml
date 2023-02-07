@@ -1,0 +1,10 @@
+<project default="compile" basedir=".">
+
+	<target name="compile">
+		<javac	destdir="bin"
+			includes="fr/imtld/ilog/HelloJava.java"
+			srcdir="src"
+			includeantruntime="false" />
+	</target>
+
+</project>
