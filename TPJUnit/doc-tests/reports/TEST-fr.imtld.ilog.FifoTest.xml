@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="0" hostname="Ganael" name="fr.imtld.ilog.FifoTest" skipped="0" tests="1" time="0.203" timestamp="2023-02-10T13:30:41">
+<testsuite errors="0" failures="0" hostname="Ganael" name="fr.imtld.ilog.FifoTest" skipped="0" tests="14" time="0.208" timestamp="2023-02-10T14:11:03">
   <properties>
     <property name="ant.library.dir" value="C:\Program Files\Ant\lib" />
     <property name="ant.file.type.fifolib" value="file" />
@@ -11,7 +11,7 @@
     <property name="bin.tests.dir" value="C:\Users\ganae\git\ILOG\TPJUnit\bin-tests" />
     <property name="sun.cpu.isalist" value="amd64" />
     <property name="sun.jnu.encoding" value="Cp1252" />
-    <property name="java.class.path" value="C:\Users\ganae\git\ILOG\TPJUnit\bin;C:\Users\ganae\git\ILOG\TPJUnit\bin-tests;C:\Users\ganae\git\ILOG\TPJUnit\lib\junit4.jar;C:\Program Files\Ant\lib\ant-launcher.jar;C:\Program Files\Ant\lib\ant.jar;C:\Program Files\Ant\lib\ant-junit.jar;C:\Program Files\Ant\lib\ant-junit4.jar" />
+    <property name="java.class.path" value="C:\Users\ganae\git\ILOG\TPJUnit\bin;C:\Users\ganae\git\ILOG\TPJUnit\bin-tests;C:\Users\ganae\git\ILOG\TPJUnit\lib\junit4.jar;C:\Users\ganae\git\ILOG\TPJUnit\lib\hamcrest.jar;C:\Program Files\Ant\lib\ant-launcher.jar;C:\Program Files\Ant\lib\ant.jar;C:\Program Files\Ant\lib\ant-junit.jar;C:\Program Files\Ant\lib\ant-junit4.jar" />
     <property name="tests.javadoc.dir" value="C:\Users\ganae\git\ILOG\TPJUnit\doc-tests\javadoc" />
     <property name="project.name" value="fifolib" />
     <property name="java.vm.vendor" value="Eclipse Adoptium" />
@@ -24,7 +24,7 @@
     <property name="user.country" value="FR" />
     <property name="sun.java.launcher" value="SUN_STANDARD" />
     <property name="sun.boot.library.path" value="C:\Users\ganae\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208\jre\bin" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner fr.imtld.ilog.FifoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\ganae\git\ILOG\TPJUnit\doc-tests\reports\TEST-fr.imtld.ilog.FifoTest.xml crashfile=C:\Users\ganae\git\ILOG\TPJUnit\junitvmwatcher5189707069905951968.properties propsfile=C:\Users\ganae\git\ILOG\TPJUnit\junit1264956336346933312.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner fr.imtld.ilog.FifoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\ganae\git\ILOG\TPJUnit\doc-tests\reports\TEST-fr.imtld.ilog.FifoTest.xml crashfile=C:\Users\ganae\git\ILOG\TPJUnit\junitvmwatcher10421332749151033086.properties propsfile=C:\Users\ganae\git\ILOG\TPJUnit\junit6274384501582072600.properties" />
     <property name="jdk.debug" value="release" />
     <property name="sun.cpu.endian" value="little" />
     <property name="user.home" value="C:\Users\ganae" />
@@ -35,7 +35,7 @@
     <property name="java.home" value="C:\Users\ganae\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208\jre" />
     <property name="javadoc.dir" value="C:\Users\ganae\git\ILOG\TPJUnit\doc" />
     <property name="file.separator" value="\" />
-    <property name="hamcrest.jar" value="C:\Users\ganae\git\ILOG\TPJUnit\lib\hamcrest.core.jar" />
+    <property name="hamcrest.jar" value="C:\Users\ganae\git\ILOG\TPJUnit\lib\hamcrest.jar" />
     <property name="basedir" value="C:\Users\ganae\git\ILOG\TPJUnit" />
     <property name="java.vm.compressedOopsMode" value="Zero based" />
     <property name="sun.stdout.encoding" value="cp850" />
@@ -56,7 +56,7 @@
     <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
     <property name="bin.dir" value="C:\Users\ganae\git\ILOG\TPJUnit\bin" />
     <property name="file.encoding" value="Cp1252" />
-    <property name="ant.project.invoked-targets" value="all" />
+    <property name="ant.project.invoked-targets" value="junitdoc" />
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
     <property name="java.vendor.version" value="Temurin-17.0.2+8" />
     <property name="junit.dir" value="C:\Users\ganae\git\ILOG\TPJUnit\lib" />
@@ -81,28 +81,34 @@
     <property name="src.dir" value="C:\Users\ganae\git\ILOG\TPJUnit\src" />
     <property name="ant.project.default-target" value="all" />
   </properties>
-  <testcase classname="fr.imtld.ilog.FifoTest" name="initializationError" time="0.016">
-    <error message="org/hamcrest/SelfDescribing" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: org/hamcrest/SelfDescribing
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1012)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-Caused by: java.lang.ClassNotFoundException: org.hamcrest.SelfDescribing
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
-</error>
-  </testcase>
-  <system-out><![CDATA[]]></system-out>
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testAllSavedObjects" time="0.016" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testAllSavedInts" time="0.002" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testSaveObjects" time="0.0" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testAddInts" time="0.001" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testAddNull" time="0.001" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testSaveEmptyFifo" time="0.0" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testSaveInts" time="0.0" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testInitiallyEmpty" time="0.001" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testAddObjects" time="0.001" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testRemoveObject" time="0.0" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testRemoveEmptyFifo" time="0.0" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testAddRemove" time="0.0" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testRemoveInt" time="0.001" />
+  <testcase classname="fr.imtld.ilog.FifoTest" name="testSizeResetSaved" time="0.0" />
+  <system-out><![CDATA[testAllSavedObjects
+testAllSavedInts
+testSaveObjects
+testAddInts
+testAddNull
+testSaveEmptyFifo
+testSaveInts
+testInitiallyEmpty
+testAddObjects
+testRemoveObject
+testRemoveEmptyFifo
+testAddRemove
+testRemoveInt
+testSizeResetSaved
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
