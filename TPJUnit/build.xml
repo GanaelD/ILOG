@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="all" name="fifolib">
+	<target name="init">
+		<property location="src" name="src.dir" description="Emplacement des codes sources de l'application" />
+		<property location="bin" name="bin.dir" description="Emplacement des classes applicatives compilées" />
+		<property location="doc" name="javadoc.dir" description="Emplacement de la JavaDoc générée" />
+
+		<property location="src-tests" name="tests.dir" description="Emplacement des codes sources des tests" />
+		<property location="bin-tests" name="bin.tests.dir" description="Emplacement des classes de test compilées" />
+		<property location="lib" name="junit.dir" description="Emplacement de junit4.jar" />
+		<property location="${junit.dir}/hamcrest.core.jar" name="hamcrest.jar" description="hamcrest.jar" />
+		<property location="doc-tests" name="tests.doc.dir" description="Emplacement de la doc générée pour les tests" />
+		<property location="${tests.doc.dir}/javadoc" name="tests.javadoc.dir" description="Emplacement de la JavaDoc des tests" />
+		<property location="${tests.doc.dir}/reports" name="testreports.dir" description="Emplacement des rapports d'exécution des tests" />
+		<property location="${tests.doc.dir}/junitdoc" name="junitdoc.dir" description="Emplacement de la JUnitDoc" />
+
+		<property name="project.name" value="${ant.project.name}" description="Nom du projet" />
+		<property location="${project.name}.jar" name="jar" description="Nom du jar de déploiement de l'application" />
+
+		<path id="src.path" description="Source path application">
+			<pathelement location="${src.dir}" />
+		</path>
+
+		<path id="tests.path" description="Source path des tests">
+			<pathelement location="${tests.dir}" />
+		</path>
+		<path id="junit.class.path" description="Class path de junit4.jar">
+			<pathelement location="${junit.dir}/junit4.jar" />
+			<pathelement location="${hamcrest.jar}" />
+		</path>
+		<path id="tests.class.path" description="Class path nécessaire aux tests">
+			<pathelement location="${bin.dir}" />
+			<pathelement location="${bin.tests.dir}" />
+			<path refid="junit.class.path" />
+		</path>
+	</target>
+
+	<target depends="init" name="compile">
+		<mkdir dir="${bin.dir}" />
+		<javac debug="true" includeantruntime="false" deprecation="true" destdir="${bin.dir}">
+			<src refid="src.path" />
+		</javac>
+	</target>
+
+	<target depends="compile" name="testscompile">
+		<mkdir dir="${bin.tests.dir}" />
+		<javac debug="true" includeantruntime="false" deprecation="true" destdir="${bin.tests.dir}">
+			<src refid="tests.path" />
+			<classpath refid="tests.class.path" />
+		</javac>
+	</target>
+
+	<target depends="compile" name="jar">
+		<jar basedir="${bin.dir}" compress="true" jarfile="${jar}" />
+	</target>
+
+	<target depends="jar, javadoc" description="Do everything for app." name="allapp" />
+	<target depends="jar, junitdoc, testsjavadoc" description="Build everything." name="all" />
+	<target depends="init" description="Clean all build products." name="clean">
+		<delete dir="${bin.dir}" />
+		<delete file="${jar}" />
+		<delete dir="${javadoc.dir}" />
+		<delete dir="${bin.tests.dir}" />
+		<delete dir="${tests.doc.dir}" />	</target>
+
+	<target depends="init" description="Javadoc for ${project.name}." name="javadoc">
+		<mkdir dir="${javadoc.dir}" />
+		<javadoc destdir="${javadoc.dir}" packagenames="*">
+			<sourcepath refid="src.path" />
+		</javadoc>
+	</target>
+
+	<target depends="javadoc" description="Javadoc for ${project.name} tests." name="testsjavadoc">
+		<mkdir dir="${tests.javadoc.dir}" />
+		<javadoc destdir="${tests.javadoc.dir}" packagenames="*">
+			<sourcepath refid="tests.path" />
+			<classpath refid="tests.class.path" />
+		</javadoc>
+	</target>
+
+	<target depends="testscompile" description="Runs tests for ${project.name}" name="tests">
+		<mkdir dir="${testreports.dir}" />
+		<junit fork="true" haltonfailure="true" printsummary="withOutAndErr" showoutput="true">
+			<formatter type="plain" usefile="false" />
+			<formatter type="xml" />
+			<classpath refid="tests.class.path" />
+			<test name="fr.imtld.ilog.FifoTest" todir="${testreports.dir}" />
+		</junit>
+	</target>
+
+	<target depends="tests" name="junitdoc" description="Génération du rapport de tests">
+		<mkdir dir="${junitdoc.dir}" />
+		<junitreport todir="${junitdoc.dir}">
+			<fileset dir="${testreports.dir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${junitdoc.dir}" />
+		</junitreport>
+	</target>
+</project>
