@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="0" hostname="Ganael" name="fr.imtld.ilog.FifoTest" skipped="0" tests="1" time="0.171" timestamp="2023-02-10T12:15:22">
+<testsuite errors="1" failures="0" hostname="Ganael" name="fr.imtld.ilog.FifoTest" skipped="0" tests="1" time="0.203" timestamp="2023-02-10T13:30:41">
   <properties>
     <property name="ant.library.dir" value="C:\Program Files\Ant\lib" />
     <property name="ant.file.type.fifolib" value="file" />
@@ -24,7 +24,7 @@
     <property name="user.country" value="FR" />
     <property name="sun.java.launcher" value="SUN_STANDARD" />
     <property name="sun.boot.library.path" value="C:\Users\ganae\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208\jre\bin" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner fr.imtld.ilog.FifoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\ganae\git\ILOG\TPJUnit\doc-tests\reports\TEST-fr.imtld.ilog.FifoTest.xml crashfile=C:\Users\ganae\git\ILOG\TPJUnit\junitvmwatcher2365535848661085771.properties propsfile=C:\Users\ganae\git\ILOG\TPJUnit\junit10577872240391404795.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner fr.imtld.ilog.FifoTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\ganae\git\ILOG\TPJUnit\doc-tests\reports\TEST-fr.imtld.ilog.FifoTest.xml crashfile=C:\Users\ganae\git\ILOG\TPJUnit\junitvmwatcher5189707069905951968.properties propsfile=C:\Users\ganae\git\ILOG\TPJUnit\junit1264956336346933312.properties" />
     <property name="jdk.debug" value="release" />
     <property name="sun.cpu.endian" value="little" />
     <property name="user.home" value="C:\Users\ganae" />
@@ -81,7 +81,7 @@
     <property name="src.dir" value="C:\Users\ganae\git\ILOG\TPJUnit\src" />
     <property name="ant.project.default-target" value="all" />
   </properties>
-  <testcase classname="fr.imtld.ilog.FifoTest" name="initializationError" time="0.014">
+  <testcase classname="fr.imtld.ilog.FifoTest" name="initializationError" time="0.016">
     <error message="org/hamcrest/SelfDescribing" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: org/hamcrest/SelfDescribing
 	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
 	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1012)

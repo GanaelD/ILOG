@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"fr.imtld.ilog","l":"Counter"},{"p":"fr.imtld.ilog","l":"Fifo"},{"p":"fr.imtld.ilog","l":"FifoHead"},{"p":"fr.imtld.ilog","l":"FifoQueue"}];updateSearchResults();
