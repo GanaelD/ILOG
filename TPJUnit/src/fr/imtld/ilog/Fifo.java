@@ -6,11 +6,13 @@ import java.util.stream.Stream;
 
 public class Fifo implements FifoHead, FifoQueue{
 
-	protected List<Object> fifo = new ArrayList<>(), oldFifo = new ArrayList<>();
+	protected List<Object> fifo = new ArrayList<>();
+	protected int head = 0;
 	
 	@Override
 	public void add(Object oSig) {
-		fifo.add(oSig);
+		if (oSig != null)
+			fifo.add(oSig);
 	}
 
 	@Override
@@ -20,34 +22,40 @@ public class Fifo implements FifoHead, FifoQueue{
 
 	@Override
 	public int getSize() {
-		return fifo.size();
+		return fifo.size() - head;
 	}
 
 	@Override
 	public void remove() {
-		fifo.remove(0);
+		if (getSize() > 0)
+			fifo.remove(head);
 	}
 
 	@Override
 	public Object getHead() {
-		return fifo.get(0);
+		if (fifo.size() > 0 && getSize() > 0)
+			return fifo.get(head);
+		return null;
 	}
 
 	@Override
 	public void save(Class<?> clsSig) {
 		if (clsSig != null) {
-			oldFifo = fifo.stream().filter(e -> e.getClass() != clsSig).toList();
-			fifo = fifo.stream().filter(e -> e.getClass() != clsSig).toList();
-		} else
-			fifo.addAll(oldFifo);
+			int temp = fifo.stream().skip(head).map(e -> e.getClass() == clsSig).toList().indexOf(false);
+			int taille = fifo.size();
+			head = temp >= 0 ? temp : taille;
+			head = head >= taille ? taille : head;
+		} else {
+			head = 0;
+		}	
 	}
 
 	@Override
 	public void save(int iSig) {
-		Stream<Object> temp = fifo.stream().filter(e -> !e.getClass().equals(Integer.class));
-		save(Integer.class);
-		oldFifo = Stream.concat(temp, fifo.stream().filter(e -> !e.equals(iSig))).toList();
-		fifo = fifo.stream().filter(e -> e.equals(iSig)).toList();
+		head = fifo.stream().skip(head).map(e -> e.equals(iSig)).toList().indexOf(false);
+		int taille = fifo.size();
+		head = head >= taille ? taille : head;
+		head = head >= 0 ? head : taille;
 	}
 
 }
