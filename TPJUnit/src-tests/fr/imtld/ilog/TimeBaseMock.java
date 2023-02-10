@@ -2,15 +2,15 @@ package fr.imtld.ilog;
 
 public class TimeBaseMock implements ITimeBase{
 	
-	protected long lt;
+	protected long now;
 	
 	@Override
 	public long now() {
-		return lt;
+		return now;
 	}
 	
 	public void setNow(long lt) {
-		this.lt = lt;
+		this.now= lt;
 	}
 
 }

@@ -3,6 +3,12 @@ package fr.imtld.ilog;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Fifo class to be tested
+ * 
+ * @version for JUnit4
+ * @author Ganaël Delzenne
+ */
 public class Fifo implements FifoHead, FifoQueue{
 
 	protected List<Object> fifo = new ArrayList<>();

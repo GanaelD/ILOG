@@ -10,8 +10,8 @@ public class Clock {
 	}
 
 	public Clock(ITimeBase _itb) {
-		_lT0 = now();
 		this._itb = _itb;
+		_lT0 = _itb.now();
 	}
 
 	public int getDay() {
