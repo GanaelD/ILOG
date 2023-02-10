@@ -8,7 +8,7 @@
 		<property location="src-tests" name="tests.dir" description="Emplacement des codes sources des tests" />
 		<property location="bin-tests" name="bin.tests.dir" description="Emplacement des classes de test compilées" />
 		<property location="lib" name="junit.dir" description="Emplacement de junit4.jar" />
-		<property location="${junit.dir}/hamcrest.core.jar" name="hamcrest.jar" description="hamcrest.jar" />
+		<property location="${junit.dir}/hamcrest.jar" name="hamcrest.jar" description="hamcrest.jar" />
 		<property location="doc-tests" name="tests.doc.dir" description="Emplacement de la doc générée pour les tests" />
 		<property location="${tests.doc.dir}/javadoc" name="tests.javadoc.dir" description="Emplacement de la JavaDoc des tests" />
 		<property location="${tests.doc.dir}/reports" name="testreports.dir" description="Emplacement des rapports d'exécution des tests" />
