@@ -1,0 +1,16 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"incremental": true,
+		"lib": ["DOM", "ES2015"],
+		"module": "CommonJS",
+		"outDir": "dist",
+		"sourceMap": true,
+		"strict": true,
+		"target": "ES6",
+		"watch": true
+	},
+	"include": [
+		"src", "tests"
+	]
+}

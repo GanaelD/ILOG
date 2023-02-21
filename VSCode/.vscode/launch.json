@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [        {
+            "type": "chrome",
+            "request": "launch",
+            "runtimeExecutable": "/usr/bin/chromium-browser",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080/testhello.html",
+            "webRoot": "${workspaceFolder}/browser"
+        }
+    ]
+}

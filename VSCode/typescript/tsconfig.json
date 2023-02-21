@@ -1,0 +1,10 @@
+
+{
+	"compilerOptions": {
+		"lib" : [ "DOM", "ES6" ],
+		"outDir": "dist/index.js",
+		"sourceMap": true,
+		"strict": true,		
+		"target" : "ES5",
+	}
+}

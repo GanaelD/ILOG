@@ -1,0 +1,1 @@
+const hello = (name: string) => `Bonjour ${name} !`
