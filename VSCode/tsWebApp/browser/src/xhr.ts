@@ -98,7 +98,7 @@ function booksNAuthors() {
 booksNAuthors()
 
 function booksOoops() {
-    geturl("books.json") // hé hé hé (il manque un s)
+    geturl("book.json") // hé hé hé (il manque un s)
         .catch(function logStatus(status: number): Promise<string> {
             console.log("error : " + status) // oups !
             return geturl("books.json") // allez on retente le coup des bouquins
@@ -110,3 +110,30 @@ function booksOoops() {
         })
 }
 booksOoops()
+
+async function chain() {
+    try {
+        const books = JSON.parse(await geturl("books.json"))
+        console.log("This is the console.log() inside chain()")
+        console.log(await geturl("authors.json"))
+    }
+    catch (status) {
+        console.log("error : "+status)
+    }
+}
+chain()
+
+async function chain1() {
+    const books = JSON.parse(await geturl("books.json"))
+    console.log("This is the console.log() inside chain1()")
+    console.log(await geturl("authors.json"))
+}
+
+async function chain2() {
+    try {
+        chain1()
+    }
+    catch (status) {
+        console.log(`error: ${status}`)
+    }
+}
