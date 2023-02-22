@@ -1,17 +1,39 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Web App</title>
+    <title>Programmation Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style title="head">
+        th {
+            color: white;
+            background-color:royalblue;
+        }
+    </style>
 </head>
 
-<body>
-    <p>Ouvrir la console de développement de Chrome (Ctrl+Shift+I)</p>
-
-    <script src="hello.js"></script>
-    <script src="index.js"></script>
+<body class="w3-container">
+    <table class="w3-table-all">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Titre</th>
+                <th>Auteur</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><i class="fa fa-plus"></i>&nbsp;&nbsp;<i class="fa fa-times"></i></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="src/xhr.js"></script>
+    <script src="src/bookui.js"></script>
 </body>
 
 </html>
