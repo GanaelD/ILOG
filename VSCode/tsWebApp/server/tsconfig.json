@@ -1,8 +1,8 @@
 {
 	"compileOnSave": true,
 	"compilerOptions": {
+		"esModuleInterop": true,
 		"incremental": true,
-		"lib": ["DOM", "ES2015"],
 		"module": "CommonJS",
 		"outDir": "dist",
 		"sourceMap": true,
