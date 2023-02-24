@@ -1,0 +1,3 @@
+module Counter {
+	requires swt;
+}
