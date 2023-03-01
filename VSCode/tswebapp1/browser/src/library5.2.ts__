@@ -1,0 +1,36 @@
+// 5.2 xhr based (requires xhr2.1.ts__ as xhr)
+// no promise nor async/await
+const getURL = getBooks
+interface IBook {
+    "title": string
+    "author": string
+}
+interface IAuthor {
+    "name": string
+    "born": string
+}
+interface ILibrary {
+    books: IBook[] | null,
+    authors: IAuthor[] | null
+}
+const getLibrary = (lib: ILibrary, logLib: () => void, logHttp: (status: number) => void) => {
+    lib.books = lib.authors = null
+    const got = (json: string, status: number, prop: keyof ILibrary) => {
+        if (status == 0) {
+            lib[prop] = JSON.parse(json)[prop]
+            if (lib.books != null && lib.authors != null)
+                logLib()
+        } else
+            logHttp(status)
+    }
+    const gotBooks: JsonReception = (json, status) => got(json, status, "books")
+    const gotAuthors : JsonReception = (json, status) => got(json, status, "authors")
+    getURL("books.json", gotBooks)
+    getURL("authors.json", gotAuthors)
+}
+const logHttp = (status: number) => console.log(status)
+function useMyLibrary() {
+    const mylib: ILibrary = {books : null, authors : null}
+    getLibrary(mylib, () => {console.log(mylib)}, logHttp)
+}
+useMyLibrary()

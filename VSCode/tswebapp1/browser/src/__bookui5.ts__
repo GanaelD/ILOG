@@ -1,0 +1,54 @@
+const th = document.querySelector("th")!
+th.style.width = "100px"
+
+class Button implements EventListenerObject {
+    static tpl = (name: string): string => `<i class="fa fa-${name}"></i>`
+    constructor(protected elt: Element) {
+        elt.addEventListener("click", this)
+    }
+    handleEvent(evt: Event) {
+        const target = <Element>evt.target
+        console.log(`${evt.type} sur ${target.className}`)
+        if (target.classList.contains("fa-plus")) {
+            const td = target.parentElement!
+            const tr = td.parentElement!
+            tr.insertAdjacentHTML("afterend", Book.tpl())
+            const trNew = tr.nextElementSibling!
+            new Book(trNew)
+        }
+    }
+}
+
+const elts = document.querySelectorAll(".fa")
+elts.forEach(elt => {
+    new Button(elt)
+})
+
+class Book {
+    static tpl = (): string => `<tr>
+	<td>${Button.tpl("plus")}&nbsp;&nbsp;${Button.tpl("times")}</td>
+	<td contenteditable="true"></td>
+	<td contenteditable="true"></td>
+</tr>`
+    constructor(protected tr: Element) {
+        const btnPlus = tr.querySelector(".fa-plus")!
+        new Button(btnPlus)
+        const btnDel = tr.querySelector(".fa-times")!
+        new Button(btnDel)
+    }
+}
+
+
+
+interface IBook {
+    "title": string,
+    "author": string
+}
+
+const o: IBook = {
+    "title": "Le chardon et le tartan",
+    "author": "Diana GABALDON"
+}
+const tr = document.querySelector("tbody > tr")!
+tr.children[1].innerHTML = o.title
+tr.children[2].innerHTML = o.author

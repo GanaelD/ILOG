@@ -1,0 +1,8 @@
+const elts = document.querySelectorAll(".fa")
+elts.forEach(elt => {
+	elt.addEventListener("click", (evt: Event) => {
+        const target = evt.target as HTMLElement
+        const className = target.className
+        console.log(`Hello from ${className}`)
+    })
+})

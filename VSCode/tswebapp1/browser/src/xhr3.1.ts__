@@ -1,0 +1,46 @@
+// manip 3.1 : promise based
+function geturl(strUrl: string): Promise<string> {
+    return new Promise(
+        function(resolve: (value: string) => any, reject: (reason?: any) => any) {
+            const xhr = new XMLHttpRequest()
+            xhr.onreadystatechange = function(evt: Event): any {
+                if (this.readyState == 4) {
+                    switch (this.status) {
+                    case 200:
+                        resolve(this.responseText)
+                        break;
+                    default:
+                        reject(this.status)
+                    }
+                }
+            }
+            try {
+                xhr.open("get", strUrl, true)
+                xhr.setRequestHeader("Accept", "application/json; charset=UTF-8")
+                xhr.send()
+            } catch (err) {
+                reject(1)
+            }  
+        }
+    )
+}
+// get books with resolve as a lambda 
+geturl("books.json").then((json: string) => {
+    return JSON.parse(json)
+})
+
+// get books (then authors once books got)
+geturl("books.json").then((jsoBooks: string) => {
+    const books = JSON.parse(jsoBooks)
+    console.log(books)
+    return geturl("authors.json")
+}).then((jsoAuthors: string) => {
+    const authors = JSON.parse(jsoAuthors)
+    console.log(authors)
+}).catch((cause: number) => {
+    console.error(cause);
+})
+
+
+
+

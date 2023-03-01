@@ -1,0 +1,27 @@
+class Button implements EventListenerObject {
+	constructor(protected elt: Element) {
+		elt.addEventListener("click", this)
+	}
+	handleEvent(evt: Event) {
+		const target = <Element> evt.target
+		console.log(`${evt.type} sur ${target.className}`)
+	}
+}
+
+const elts = document.querySelectorAll(".fa")
+elts.forEach(elt => {
+    new Button(elt)        
+})
+
+interface IBook {
+    "title": string,
+    "author": string
+}
+
+const o: IBook = {
+    "title" : "Le chardon et le tartan",
+    "author" : "Diana GABALDON"
+}
+const tr = document.querySelector("tbody > tr") !
+tr.children[1].innerHTML = o.title
+tr.children[2].innerHTML = o.author

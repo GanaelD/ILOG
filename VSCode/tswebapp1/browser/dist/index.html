@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Requête cross-origin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="data">
+    </div>
+    <script src="src/geturl.js"></script>
+    <script>const data = getURL("http://localhost:8080/book", (json, status) => {
+        if (status == 0)
+            document.querySelector("#data").innerHTML = json
+    })</script>
+</body>
+
+</html>

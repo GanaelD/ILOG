@@ -1,0 +1,14 @@
+class Button implements EventListenerObject {
+	constructor(protected elt: Element) {
+		elt.addEventListener("click", this)
+	}
+	handleEvent(evt: Event) {
+		const target = <Element> evt.target
+		console.log(`${evt.type} sur ${target.className}`)
+	}
+}
+
+const elts = document.querySelectorAll(".fa")
+elts.forEach(elt => {
+    new Button(elt)        
+})

@@ -1,0 +1,24 @@
+{
+  "name": "webappserver",
+  "version": "1.0.0",
+  "description": "tswebapp server",
+  "main": "dist/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "nodemon dist/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  },
+  "deDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.23"
+  }
+}

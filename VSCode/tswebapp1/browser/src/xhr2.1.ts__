@@ -1,0 +1,31 @@
+// manip 2.1 : callback based
+// callback complies interface JsonReception
+interface JsonReception {
+    (json: string, status: number): void
+}
+// getBooks hides complexity of "onreadystatechange"
+function getBooks(strUrl: string, cb: JsonReception): void {
+    const xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = function(evt: Event): any {
+        if (this.readyState == 4) {
+            switch (this.status) {
+            case 200:
+                cb(this.responseText, 0)
+                break;
+            default:
+                cb("", this.status)
+            }
+        }
+    }
+    try {
+        xhr.open("get", strUrl, true)
+        xhr.setRequestHeader("Accept", "application/json; charset=UTF-8")
+        xhr.send()
+    } catch (err) {
+        cb("", 1)
+    }  
+}
+// use getBooks with lambda callback
+getBooks("books.json", (json: string, status: number) => {
+	console.log(status ? status : json)
+})

@@ -1,0 +1,108 @@
+/**
+ * Eclipse Theme modified from github-gist by Christophe TOMBELLE
+ * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
+ */
+.hljs {
+	display: block;
+	background: white;
+	padding: 0.5em;
+	color: #333333;
+	overflow-x: auto;
+	font-family: consolas, "Lucida Console", Monaco, monospace;
+}
+
+.hljs-comment {
+	color: #3f5fbf;
+}
+
+.hljs-meta {
+	color: #646464;
+}
+
+.html .hljs-meta, .xml .hljs-meta {
+	color: #008080;
+}
+
+.hljs-doctag {
+	color: #7f9fbf;
+}
+
+.hljs-variable {
+	color: #0000c0;
+}
+
+.hljs-number {
+	color: #2a00eb;
+}
+
+.hljs-tag .hljs-string {
+	font-style: italic;
+}
+
+.hljs-string, .hljs-template-variable, .hljs-strong, .hljs-emphasis,
+	.hljs-quote {
+	color: #2a00ff;
+}
+
+.hljs-keyword, .hljs-selector-tag, .hljs-type {
+	font-weight: bold;
+	color: #950055;
+}
+
+.hljs-literal, .hljs-symbol, .hljs-bullet {
+	color: #0086b3;
+}
+
+.hljs-attribute {
+	color: #7f007f;
+}
+
+.hljs-tag .hljs-name {
+	color: #3f7f7f;
+}
+
+.hljs-section, .hljs-name {
+	color: #63a35c;
+}
+
+.hljs-tag {
+	color: #3f7f7f;
+}
+
+.hljs-title {
+	color: #000000;
+}
+
+.hljs-selector-id, .hljs-selector-attr,
+	.hljs-selector-pseudo {
+	color: #795da3;
+}
+
+.javascript .hljs-attr {
+	color: #000000;
+}
+
+.hljs-attr {
+	color: #7f007f;
+}
+
+.hljs-selector-class {
+	font-style: italic;
+	color: #3f7f7f;
+}
+
+
+
+.hljs-addition {
+	color: #55a532;
+	background-color: #eaffea;
+}
+
+.hljs-deletion {
+	color: #bd2c00;
+	background-color: #ffecec;
+}
+
+.hljs-link {
+	text-decoration: underline;
+}

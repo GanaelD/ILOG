@@ -1,0 +1,16 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"incremental": true,
+		"module": "CommonJS",
+		"outDir": "dist",
+		"sourceMap": true,
+		"strict": true,
+		"target": "ES6",
+		"watch": true
+	},
+	"include": [
+		"src", "tests"
+	]
+}

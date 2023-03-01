@@ -1,0 +1,10 @@
+// manip 6.2 (phase montante)
+function logEvent(this: any, e: any) {
+    console.log(this, e.target, e.eventPhase)
+}
+const divCont = document.querySelector("#cont") !
+const btn = document.querySelector(".hello") !
+window.addEventListener("click", logEvent)
+document.body.addEventListener("click", logEvent)
+divCont.addEventListener("click", logEvent)
+btn.addEventListener("click", logEvent)

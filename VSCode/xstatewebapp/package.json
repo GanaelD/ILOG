@@ -1,0 +1,22 @@
+{
+  "name": "xstatewebapp",
+  "version": "1.0.0",
+  "description": "tswebapp with xstate",
+  "main": "server/dist/main.js",
+  "type": "module",
+  "scripts": {
+    "build": "node --trace-warnings esbuild.js",
+    "start": "cd server && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "xstate": "^4.37.0"
+  },
+  "devDependencies": {
+    "@xstate/cli": "^0.1.7",
+    "esbuild": "^0.14.36",
+    "esbuild-copy-static-files": "^0.1.0"
+  }
+}
