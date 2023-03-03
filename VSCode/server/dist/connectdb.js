@@ -43,4 +43,5 @@ function disconnect() {
     });
 }
 exports.disconnect = disconnect;
+connect();
 //# sourceMappingURL=connectdb.js.map

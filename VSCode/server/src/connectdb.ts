@@ -23,3 +23,5 @@ export async function disconnect() {
         console.error(`. Error ${e.code} : ${e.message}`)
     }
 }
+
+connect();
